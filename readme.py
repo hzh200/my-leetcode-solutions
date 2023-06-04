@@ -1,4 +1,5 @@
 import os
+import posixpath
 from enum import Enum
 
 Difficulty = Enum('Difficulty', ['Easy', 'Medium', 'Hard'])
@@ -50,15 +51,15 @@ def generate_readme():
     BASE_PATH = '.'
     for p in problems:
         p.solutions = []
-        problem_path = os.path.join(BASE_PATH, str(p.type.name).lower() + 's', p.name)
+        problem_path = posixpath.join(BASE_PATH, str(p.type.name).lower() + 's', p.name)
         for solution_path in os.listdir(problem_path):
             suffix = solution_path.split('.')[-1]
-            p.solutions.append(Solution(language_mapping[suffix], os.path.join(problem_path, solution_path)))
+            p.solutions.append(Solution(language_mapping[suffix], posixpath.join(problem_path, solution_path)))
 
     readme_head = '''# leetcode-solutions\nMy solutions for leetcode coding problems, maybe using multiple languages.\n'''
     table_head = '''| No | Name | Difficulty | Solutions |\n| -- | -- | -- | -- |\n'''
     
-    readme_file = open(os.path.join(BASE_PATH, 'README.md'), 'w') 
+    readme_file = open(posixpath.join(BASE_PATH, 'README.md'), 'w') 
     readme_file.write(readme_head)
     readme_file.write('\n')
     readme_file.write(table_head)
