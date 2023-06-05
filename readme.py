@@ -2,6 +2,8 @@ import os
 import posixpath
 from enum import Enum
 
+WEBSITE_PROBLEMS_URL = 'https://leetcode.cn/problems/'
+
 Difficulty = Enum('Difficulty', ['Easy', 'Medium', 'Hard'])
 Type = Enum('Type', ['Algrithom', 'Function'])
 class Language(Enum):
@@ -30,16 +32,14 @@ class Solution:
     link: str
 
 class Problem:
-    def __init__(self, no, name, link, difficulty, type) -> None:
+    def __init__(self, no, name, difficulty, type) -> None:
         self.no = no
         self.name = name
-        self.link = link
         self.difficulty = difficulty
         self.type = type
 
     no: int
     name: str
-    link: str
     difficulty: Difficulty
     type: Type
     solutions: list[Solution]
@@ -66,9 +66,11 @@ def generate_readme():
 
     for p in problems:
         solution_items = ['[{0}]({1})'.format(s.language.value, s.link.replace(' ', '%20')) for s in p.solutions]
-        table_row = '| {0} | [{1}]({2}) | {3} | {4} |'.format(p.no, p.name, p.link, p.difficulty.name, ', '.join(solution_items))
+        table_row = '| {0} | [{1}]({2}) | {3} | {4} |'.format(p.no, p.name, WEBSITE_PROBLEMS_URL + p.name.replace(' ', '-'), p.difficulty.name, ', '.join(solution_items))
         readme_file.write(table_row)
+        readme_file.write('\n')
 
+    readme_file.write('\n')
     readme_file.close()
 
 if __name__ == "__main__":
