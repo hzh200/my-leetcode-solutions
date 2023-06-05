@@ -1,3 +1,6 @@
+#include <string.h>
+#include <stdlib.h>
+
 char * mergeAlternately(char * word1, char * word2) {
     int len = strlen(word1) + strlen(word2);
     char* head = (char*)malloc((len + 1) * sizeof(char));
