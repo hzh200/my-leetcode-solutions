@@ -1,77 +1,106 @@
 import os
 import posixpath
-from enum import Enum
+from definitions import Type, AlgorithmsDomain, DataStructuresDomain, FunctionsDomain, domain_mapping, language_mapping, Solution
 
 WEBSITE_PROBLEMS_URL = 'https://leetcode.cn/problems/'
+BASE_PATH = '.'
+DOMAINS_PATH = posixpath.join(BASE_PATH, 'domains')
+SOLUTIONS_PATH = posixpath.join(BASE_PATH, 'solutions')
 
-Difficulty = Enum('Difficulty', ['Easy', 'Medium', 'Hard'])
-Type = Enum('Type', ['Algrithom', 'Function'])
-class Language(Enum):
-    C = 'C'
-    CPP = 'C++'
-    Java = 'Java'
-    JavaScript = 'JavaScript'
-    Go = 'Go'
-    Python = 'Python'
-
-language_mapping = {
-    'c': Language.C,
-    'cpp': Language.CPP,
-    'java': Language.Java,
-    'js': Language.JavaScript,
-    'go': Language.Go,
-    'py': Language.Python,
-}
-
-class Solution:
-    def __init__(self, language, link) -> None:
-        self.language = language
-        self.link = link
-
-    language: Language
-    link: str
-
-class Problem:
-    def __init__(self, no, name, difficulty, type) -> None:
-        self.no = no
-        self.name = name
-        self.difficulty = difficulty
-        self.type = type
-
-    no: int
-    name: str
-    difficulty: Difficulty
-    type: Type
-    solutions: list[Solution]
-
-def generate_readme():
+def fetch_problems():
     from problems import problems
     problems.sort(key=lambda p: p.no, reverse=True)
+    for problem in problems: # Add solutions for problems.
+        problem.solutions = []
+        solutions_path = posixpath.join(SOLUTIONS_PATH, str(problem.type.value).lower() + 's', problem.name)
+        for solution_path in os.listdir(solutions_path):
+            type, suffix = solution_path.split('.')
+            problem.solutions.append(Solution(language_mapping[suffix], domain_mapping[type], posixpath.join(solutions_path, solution_path)))
+    return problems
 
-    BASE_PATH = '.'
-    for p in problems:
-        p.solutions = []
-        problem_path = posixpath.join(BASE_PATH, str(p.type.name).lower() + 's', p.name)
-        for solution_path in os.listdir(problem_path):
-            suffix = solution_path.split('.')[-1]
-            p.solutions.append(Solution(language_mapping[suffix], posixpath.join(problem_path, solution_path)))
+def fetch_domains():
+    domains = {}
+    domains[Type.Algrithom] = []
+    domains[Type.Data_Structure] = []
+    domains[Type.Function] = []
+    for domain in [domain.value for domain in AlgorithmsDomain]:
+        domains[Type.Algrithom].append([domain, posixpath.join(DOMAINS_PATH, Type.Algrithom.value + 's', domain + '.md')])
+    for domain in [domain.value for domain in DataStructuresDomain]:
+        domains[Type.Data_Structure].append([domain, posixpath.join(DOMAINS_PATH, Type.Data_Structure.value + 's', domain + '.md')])
+    for domain in [domain.value for domain in FunctionsDomain]:
+        domains[Type.Function].append([domain, posixpath.join(DOMAINS_PATH, Type.Function.value + 's', domain + '.md')])
+    return domains
 
-    readme_head = '''# leetcode-solutions\nMy solutions for leetcode coding problems, maybe using multiple languages.\n'''
-    table_head = '''| No | Name | Difficulty | Solutions |\n| -- | -- | -- | -- |\n'''
+def get_problem_table_rows(): 
+    table_rows = []
+    for problem in fetch_problems():
+        if problem.type.value == Type.Algrithom.value or problem.type.value == Type.Data_Structure.value:
+            solution_items = ['[{0}-{1}]({2})'.format(s.domain.value, s.language.value, s.link.replace(' ', '%20')) for s in problem.solutions]
+        else:
+            solution_items = ['[{0}]({1})'.format(s.language.value, s.link.replace(' ', '%20')) for s in problem.solutions]
+        table_rows.append([problem.no, problem.name, WEBSITE_PROBLEMS_URL + problem.name.replace(' ', '-'), problem.difficulty, ', '.join(solution_items)])
+    return table_rows
+
+def get_domain_table_rows(domain_title): 
+    table_rows = []
+    for problem in fetch_problems():
+        for solution in problem.solutions:
+            if solution.domain.value == domain_title:
+                table_rows.append([problem.no, problem.name, WEBSITE_PROBLEMS_URL + problem.name.replace(' ', '-'), solution.language.value, '.' + solution.link.replace(' ', '%20')])
+    return table_rows
+
+def get_domain_index_sections(domains):
+    return [[type.value + 's', ' | '.join(['[{0}]({1})'.format(domain[0], domain[1].replace(' ', '%20')) for domain in type_domains])] for type, type_domains in domains.items()]
+
+def generate_domain_file(domain):
+    domain_title, domain_path = domain
+
+    table_head = '| No | Name | Solution |'
+    table_spliter = '| -- | -- | -- |'
+    table_body = '\n'.join(['{0} | [{1}]({2}) | [{3}]({4})'.format(row[0], row[1], row[2], row[3], row[4]) for row in get_domain_table_rows(domain_title)])
+
+    os.makedirs(os.path.dirname(domain_path), exist_ok=True)
+    domain_file = open(domain_path, 'w')
+    domain_file.write('#' + ' ' + domain_title + '\n')
+    domain_file.write(table_head + '\n')
+    domain_file.write(table_spliter + '\n')
+    domain_file.write(table_body + '\n')
+    domain_file.write('\n')
+    domain_file.close()
+
+def generate_readme_file(): # Generate readme file.
+    domains = fetch_domains()
+    for _, type_domains in domains.items():
+        for domain in type_domains:
+            generate_domain_file(domain)
+
+    project_title = 'leetcode-solutions'
+    project_description = 'My solutions for leetcode coding problems, maybe using multiple languages.'
+    domain_title = 'domains'
+    problems_title = 'problems'
     
+    domain_index = '\n'.join(['#### {0}\n{1}'.format(title, content) for title, content in get_domain_index_sections(domains)])
+
+    table_head = '| No | Name | Difficulty | Solutions |'
+    table_spliter = '| -- | -- | -- | -- |'
+    table_body = '\n'.join(['| {0} | [{1}]({2}) | {3} | {4} |'.format(row[0], row[1], row[2], row[3], row[4]) for row in get_problem_table_rows()])
+
     readme_file = open(posixpath.join(BASE_PATH, 'README.md'), 'w') 
-    readme_file.write(readme_head)
+    readme_file.write('#' + ' ' + project_title + '\n')
+    readme_file.write(project_description + '\n')
     readme_file.write('\n')
-    readme_file.write(table_head)
-
-    for p in problems:
-        solution_items = ['[{0}]({1})'.format(s.language.value, s.link.replace(' ', '%20')) for s in p.solutions]
-        table_row = '| {0} | [{1}]({2}) | {3} | {4} |'.format(p.no, p.name, WEBSITE_PROBLEMS_URL + p.name.replace(' ', '-'), p.difficulty.name, ', '.join(solution_items))
-        readme_file.write(table_row)
-        readme_file.write('\n')
-
+    readme_file.write('##' + ' ' + domain_title + '\n')
+    readme_file.write(domain_index + '\n')
+    readme_file.write('\n')
+    readme_file.write('##' + ' ' + problems_title + '\n')
+    readme_file.write(table_head + '\n')
+    readme_file.write(table_spliter + '\n')
+    readme_file.write(table_body + '\n')
     readme_file.write('\n')
     readme_file.close()
 
+def main(): # Generate README.md and corresponding domain markdown files automatically.
+    generate_readme_file()
+
 if __name__ == "__main__":
-    generate_readme()
+    main()
