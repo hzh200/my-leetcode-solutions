@@ -7,9 +7,10 @@ BASE_PATH = '.'
 DOMAINS_PATH = posixpath.join(BASE_PATH, 'domains')
 SOLUTIONS_PATH = posixpath.join(BASE_PATH, 'solutions')
 
-def fetch_problems():
+def fetch_problems(sort=True):
     from problems import problems
-    problems.sort(key=lambda p: p.no, reverse=True)
+    if sort:
+        problems.sort(key=lambda p: p.no, reverse=True)
     for problem in problems: # Add solutions for problems.
         problem.solutions = []
         solutions_path = posixpath.join(SOLUTIONS_PATH, str(problem.type.value).lower() + 's', problem.name)
@@ -34,11 +35,11 @@ def fetch_domains():
 def get_problem_table_rows(): 
     table_rows = []
     for problem in fetch_problems():
-        if problem.type.value == Type.Algrithom.value or problem.type.value == Type.Data_Structure.value:
+        if problem.type.value == Type.Algrithom.value:
             solution_items = ['[{0}-{1}]({2})'.format(s.domain.value, s.language.value, s.link.replace(' ', '%20')) for s in problem.solutions]
         else:
             solution_items = ['[{0}]({1})'.format(s.language.value, s.link.replace(' ', '%20')) for s in problem.solutions]
-        table_rows.append([problem.no, problem.name, WEBSITE_PROBLEMS_URL + problem.name.replace(' ', '-'), problem.difficulty, ', '.join(solution_items)])
+        table_rows.append([problem.no, problem.name, WEBSITE_PROBLEMS_URL + problem.name.replace(' ', '-'), problem.difficulty.value, ', '.join(solution_items)])
     return table_rows
 
 def get_domain_table_rows(domain_title): 

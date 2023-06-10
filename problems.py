@@ -14,6 +14,9 @@ problems.append(Problem(48, 'Rotate Image', Difficulty.Medium, Type.Data_Structu
 problems.append(Problem(142, 'Linked List Cycle II', Difficulty.Medium, Type.Data_Structure))
 problems.append(Problem(23, 'Merge k Sorted Lists', Difficulty.Hard, Type.Data_Structure))
 problems.append(Problem(19, 'Remove Nth Node From End of List', Difficulty.Medium, Type.Data_Structure))
+problems.append(Problem(416, 'Partition Equal Subset Sum', Difficulty.Medium, Type.Algrithom))
 
 
- 
+
+
+

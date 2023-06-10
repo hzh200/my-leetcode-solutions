@@ -14,8 +14,6 @@ class AlgorithmsDomain(Enum):
 class DataStructuresDomain(Enum):
     Array = 'Array'
     LinkedList = 'Linked List'
-    Cache = 'Cache'
-    Advanced = 'Advanced'
 
 class FunctionsDomain(Enum):
     Function = 'Function'
@@ -29,9 +27,9 @@ domain_mapping = {
 
     'array': DataStructuresDomain.Array,
     'list': DataStructuresDomain.LinkedList,
-    'advanced': DataStructuresDomain.Advanced,
 
-    'func': FunctionsDomain.Function
+    'func': FunctionsDomain.Function,
+    'struct': FunctionsDomain.Data_Structure
 }
 
 class Difficulty(Enum):
