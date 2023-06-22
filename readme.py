@@ -1,11 +1,12 @@
 import os
 import posixpath
-from definitions import Type, AlgorithmsDomain, DataStructuresDomain, FunctionsDomain, domain_mapping, language_mapping, Solution
+from definitions import Type, AlgorithmsDomain, DataStructuresDomain, FunctionsDomain, IndieDomain, domain_mapping, language_mapping, Solution
 
 WEBSITE_PROBLEMS_URL = 'https://leetcode.cn/problems/'
 BASE_PATH = '.'
 DOMAINS_PATH = posixpath.join(BASE_PATH, 'domains')
 SOLUTIONS_PATH = posixpath.join(BASE_PATH, 'solutions')
+DOMAIN_RELATIVE_BASE_PATH = posixpath.join('..', '..')
 
 def fetch_problems(sort=True):
     from problems import problems
@@ -16,7 +17,7 @@ def fetch_problems(sort=True):
         solutions_path = posixpath.join(SOLUTIONS_PATH, str(problem.type.value).lower() + 's', problem.name)
         for solution_path in os.listdir(solutions_path):
             type, suffix = solution_path.split('.')
-            problem.solutions.append(Solution(language_mapping[suffix], domain_mapping[type], posixpath.join(solutions_path, solution_path)))
+            problem.solutions.append(Solution(language_mapping[suffix], domain_mapping[type] if type in domain_mapping else IndieDomain(type), posixpath.join(solutions_path, solution_path)))
     return problems
 
 def fetch_domains():
@@ -45,9 +46,11 @@ def get_problem_table_rows():
 def get_domain_table_rows(domain_title): 
     table_rows = []
     for problem in fetch_problems():
-        for solution in problem.solutions:
-            if solution.domain.value == domain_title:
-                table_rows.append([problem.no, problem.name, WEBSITE_PROBLEMS_URL + problem.name.replace(' ', '-'), solution.language.value, '.' + solution.link.replace(' ', '%20')])
+        solutions = ['[{0}]({1})'.format(solution.language.value, posixpath.join(DOMAIN_RELATIVE_BASE_PATH, solution.link.replace(' ', '%20'))) for solution in filter(lambda solution: solution.domain.value == domain_title, problem.solutions)]
+        if len(solutions) == 0:
+            continue
+        table_rows.append([problem.no, problem.name, WEBSITE_PROBLEMS_URL + problem.name.replace(' ', '-'), \
+            ', '.join(solutions)])
     return table_rows
 
 def get_domain_index_sections(domains):
@@ -58,7 +61,7 @@ def generate_domain_file(domain):
 
     table_head = '| No | Name | Solution |'
     table_spliter = '| -- | -- | -- |'
-    table_body = '\n'.join(['{0} | [{1}]({2}) | [{3}]({4})'.format(row[0], row[1], row[2], row[3], row[4]) for row in get_domain_table_rows(domain_title)])
+    table_body = '\n'.join(['{0} | [{1}]({2}) | {3}'.format(row[0], row[1], row[2], row[3]) for row in get_domain_table_rows(domain_title)])
 
     os.makedirs(os.path.dirname(domain_path), exist_ok=True)
     domain_file = open(domain_path, 'w')

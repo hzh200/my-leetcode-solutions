@@ -10,6 +10,15 @@ class AlgorithmsDomain(Enum):
     DynamicProgramming = 'DP'
     Search = 'Search'
     Greedy = 'Greedy'
+    BackTracking = 'BackTracking'
+
+class IndieDomain:
+    name: str
+    value: str
+    def __init__(self, value: str) -> None:
+        value = ''.join([part.capitalize() for part in value.split('-')])
+        self.name = value
+        self.value = value
 
 class DataStructuresDomain(Enum):
     Array = 'Array'
@@ -24,6 +33,7 @@ domain_mapping = {
     'dp': AlgorithmsDomain.DynamicProgramming,
     'search': AlgorithmsDomain.Search,
     'greedy': AlgorithmsDomain.Greedy,
+    'backtracking': AlgorithmsDomain.BackTracking,
 
     'array': DataStructuresDomain.Array,
     'list': DataStructuresDomain.LinkedList,
@@ -44,12 +54,14 @@ class Language(Enum):
     JavaScript = 'JavaScript'
     Go = 'Go'
     Python = 'Python'
+    Typescript = 'TypeScript'
 
 language_mapping = {
     'c': Language.C,
     'cpp': Language.CPP,
     'java': Language.Java,
     'js': Language.JavaScript,
+    'ts': Language.Typescript,
     'go': Language.Go,
     'py': Language.Python,
 }
@@ -61,7 +73,7 @@ class Solution:
         self.link = link
 
     language: Language
-    domain: AlgorithmsDomain | DataStructuresDomain | FunctionsDomain
+    domain: AlgorithmsDomain | DataStructuresDomain | FunctionsDomain | IndieDomain
     link: str
 
 class Problem:

@@ -15,7 +15,10 @@ problems.append(Problem(142, 'Linked List Cycle II', Difficulty.Medium, Type.Dat
 problems.append(Problem(23, 'Merge k Sorted Lists', Difficulty.Hard, Type.Data_Structure))
 problems.append(Problem(19, 'Remove Nth Node From End of List', Difficulty.Medium, Type.Data_Structure))
 problems.append(Problem(416, 'Partition Equal Subset Sum', Difficulty.Medium, Type.Algrithom))
-
+problems.append(Problem(146, 'LRU Cache', Difficulty.Medium, Type.Function))
+problems.append(Problem(51, 'N-Queens', Difficulty.Hard, Type.Algrithom))
+problems.append(Problem(5, 'Longest Palindromic Substring', Difficulty.Hard, Type.Algrithom))
+problems.append(Problem(140, 'Word Break II', Difficulty.Hard, Type.Algrithom))
 
 
 
