@@ -12,6 +12,14 @@ class AlgorithmsDomain(Enum):
     Greedy = 'Greedy'
     BackTracking = 'BackTracking'
 
+class IndieDomain:
+    name: str
+    value: str
+    def __init__(self, value: str) -> None:
+        value = ''.join([part.capitalize() for part in value.split('-')])
+        self.name = value
+        self.value = value
+
 class DataStructuresDomain(Enum):
     Array = 'Array'
     LinkedList = 'Linked List'
@@ -65,7 +73,7 @@ class Solution:
         self.link = link
 
     language: Language
-    domain: AlgorithmsDomain | DataStructuresDomain | FunctionsDomain
+    domain: AlgorithmsDomain | DataStructuresDomain | FunctionsDomain | IndieDomain
     link: str
 
 class Problem:

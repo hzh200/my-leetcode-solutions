@@ -17,5 +17,9 @@ problems.append(Problem(19, 'Remove Nth Node From End of List', Difficulty.Mediu
 problems.append(Problem(416, 'Partition Equal Subset Sum', Difficulty.Medium, Type.Algrithom))
 problems.append(Problem(146, 'LRU Cache', Difficulty.Medium, Type.Function))
 problems.append(Problem(51, 'N-Queens', Difficulty.Hard, Type.Algrithom))
+problems.append(Problem(5, 'Longest Palindromic Substring', Difficulty.Hard, Type.Algrithom))
+problems.append(Problem(140, 'Word Break II', Difficulty.Hard, Type.Algrithom))
+
+
 
 

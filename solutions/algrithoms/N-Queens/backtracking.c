@@ -3,6 +3,8 @@
  * The sizes of the arrays are returned as *returnColumnSizes array.
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
+#include <string.h>
+#include <stdlib.h>
 
 void solveNQueensCore(int n, int level, int* col, int* slash, int* bSlash, int* track, int* returnSize, char**** resP);
 
@@ -18,7 +20,6 @@ char *** solveNQueens(int n, int* returnSize, int** returnColumnSizes) {
     char ***res;
     resP[0] = res;
     solveNQueensCore(n, 0, col, slash, bSlash, track, returnSize, resP);
-
 
     *returnColumnSizes = malloc(sizeof(int) * (*returnSize));
     for (int i = 0; i < *returnSize; i++) {
