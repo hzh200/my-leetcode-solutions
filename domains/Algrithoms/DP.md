@@ -1,6 +1,7 @@
 # DP
 | No | Name | Solution |
 | -- | -- | -- |
+1143 | [Longest Common Subsequence](https://leetcode.cn/problems/Longest-Common-Subsequence) | [C](../.././solutions/algrithoms/Longest%20Common%20Subsequence/dp.c)
 474 | [Ones and Zeroes](https://leetcode.cn/problems/Ones-and-Zeroes) | [C](../.././solutions/algrithoms/Ones%20and%20Zeroes/dp.c)
 416 | [Partition Equal Subset Sum](https://leetcode.cn/problems/Partition-Equal-Subset-Sum) | [C](../.././solutions/algrithoms/Partition%20Equal%20Subset%20Sum/dp.c)
 300 | [Longest Increasing Subsequence](https://leetcode.cn/problems/Longest-Increasing-Subsequence) | [C](../.././solutions/algrithoms/Longest%20Increasing%20Subsequence/dp.c)

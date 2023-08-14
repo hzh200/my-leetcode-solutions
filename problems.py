@@ -19,7 +19,7 @@ problems.append(Problem(146, 'LRU Cache', Difficulty.Medium, Type.Function))
 problems.append(Problem(51, 'N-Queens', Difficulty.Hard, Type.Algrithom))
 problems.append(Problem(5, 'Longest Palindromic Substring', Difficulty.Hard, Type.Algrithom))
 problems.append(Problem(140, 'Word Break II', Difficulty.Hard, Type.Algrithom))
-
+problems.append(Problem(1143, 'Longest Common Subsequence', Difficulty.Medium, Type.Algrithom))
 
 
 
