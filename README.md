@@ -14,6 +14,7 @@ My solutions for leetcode coding problems, maybe using multiple languages.
 | -- | -- | -- | -- |
 | 1768 | [Merge Strings Alternately](https://leetcode.cn/problems/Merge-Strings-Alternately) | Easy | [String-C](./solutions/algrithoms/Merge%20Strings%20Alternately/string.c) |
 | 1143 | [Longest Common Subsequence](https://leetcode.cn/problems/Longest-Common-Subsequence) | Medium | [DP-C](./solutions/algrithoms/Longest%20Common%20Subsequence/dp.c) |
+| 827 | [Making A Large Island](https://leetcode.cn/problems/Making-A-Large-Island) | Hard | [MarkAndMerge-JavaScript](./solutions/algrithoms/Making%20A%20Large%20Island/mark-and-merge.js) |
 | 474 | [Ones and Zeroes](https://leetcode.cn/problems/Ones-and-Zeroes) | Medium | [DP-C](./solutions/algrithoms/Ones%20and%20Zeroes/dp.c) |
 | 416 | [Partition Equal Subset Sum](https://leetcode.cn/problems/Partition-Equal-Subset-Sum) | Medium | [DP-C](./solutions/algrithoms/Partition%20Equal%20Subset%20Sum/dp.c) |
 | 300 | [Longest Increasing Subsequence](https://leetcode.cn/problems/Longest-Increasing-Subsequence) | Medium | [Greedy-C](./solutions/algrithoms/Longest%20Increasing%20Subsequence/greedy.c), [DP-C](./solutions/algrithoms/Longest%20Increasing%20Subsequence/dp.c) |
