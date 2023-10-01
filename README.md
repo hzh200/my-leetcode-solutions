@@ -17,13 +17,16 @@ My solutions for leetcode coding problems, maybe using multiple languages.
 | 827 | [Making A Large Island](https://leetcode.cn/problems/Making-A-Large-Island) | Hard | [MarkAndMerge-JavaScript](./solutions/algrithoms/Making%20A%20Large%20Island/mark-and-merge.js) |
 | 474 | [Ones and Zeroes](https://leetcode.cn/problems/Ones-and-Zeroes) | Medium | [DP-C](./solutions/algrithoms/Ones%20and%20Zeroes/dp.c) |
 | 416 | [Partition Equal Subset Sum](https://leetcode.cn/problems/Partition-Equal-Subset-Sum) | Medium | [DP-C](./solutions/algrithoms/Partition%20Equal%20Subset%20Sum/dp.c) |
-| 300 | [Longest Increasing Subsequence](https://leetcode.cn/problems/Longest-Increasing-Subsequence) | Medium | [Greedy-C](./solutions/algrithoms/Longest%20Increasing%20Subsequence/greedy.c), [DP-C](./solutions/algrithoms/Longest%20Increasing%20Subsequence/dp.c) |
-| 220 | [Contains Duplicate III](https://leetcode.cn/problems/Contains-Duplicate-III) | Hard | [SlidingWindow-JavaScript](./solutions/algrithoms/Contains%20Duplicate%20III/sliding-window.js), [BucketSort-JavaScript](./solutions/algrithoms/Contains%20Duplicate%20III/bucket-sort.js) |
+| 300 | [Longest Increasing Subsequence](https://leetcode.cn/problems/Longest-Increasing-Subsequence) | Medium | [DP-C](./solutions/algrithoms/Longest%20Increasing%20Subsequence/dp.c), [Greedy-C](./solutions/algrithoms/Longest%20Increasing%20Subsequence/greedy.c) |
+| 220 | [Contains Duplicate III](https://leetcode.cn/problems/Contains-Duplicate-III) | Hard | [Bucket-JavaScript](./solutions/algrithoms/Contains%20Duplicate%20III/bucket.js), [SlidingWindow-JavaScript](./solutions/algrithoms/Contains%20Duplicate%20III/sliding-window.js) |
 | 213 | [House Robber II](https://leetcode.cn/problems/House-Robber-II) | Medium | [DP-C](./solutions/algrithoms/House%20Robber%20II/dp.c) |
 | 198 | [House Robber](https://leetcode.cn/problems/House-Robber) | Medium | [DP-C](./solutions/algrithoms/House%20Robber/dp.c) |
+| 154 | [Find Minimum in Rotated Sorted Array II](https://leetcode.cn/problems/Find-Minimum-in-Rotated-Sorted-Array-II) | Hard | [Search-JavaScript](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array%20II/search.js) |
+| 153 | [Find Minimum in Rotated Sorted Array](https://leetcode.cn/problems/Find-Minimum-in-Rotated-Sorted-Array) | Medium | [Search-JavaScript](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array/search.js) |
 | 146 | [LRU Cache](https://leetcode.cn/problems/LRU-Cache) | Medium | [JavaScript](./solutions/functions/LRU%20Cache/struct.js) |
 | 142 | [Linked List Cycle II](https://leetcode.cn/problems/Linked-List-Cycle-II) | Medium | [C](./solutions/data%20structures/Linked%20List%20Cycle%20II/list.c) |
 | 140 | [Word Break II](https://leetcode.cn/problems/Word-Break-II) | Hard | [BackTracking-C](./solutions/algrithoms/Word%20Break%20II/backtracking.c), [BackTracking-JavaScript](./solutions/algrithoms/Word%20Break%20II/backtracking.js), [MemoizationBacktracking-JavaScript](./solutions/algrithoms/Word%20Break%20II/memoization-backtracking.js) |
+| 134 | [Gas Station](https://leetcode.cn/problems/Gas-Station) | Medium | [Greedy-JavaScript](./solutions/algrithoms/Gas%20Station/greedy.js) |
 | 70 | [Climbing Stairs](https://leetcode.cn/problems/Climbing-Stairs) | Easy | [DP-C](./solutions/algrithoms/Climbing%20Stairs/dp.c) |
 | 51 | [N-Queens](https://leetcode.cn/problems/N-Queens) | Hard | [BackTracking-C](./solutions/algrithoms/N-Queens/backtracking.c) |
 | 48 | [Rotate Image](https://leetcode.cn/problems/Rotate-Image) | Medium | [C](./solutions/data%20structures/Rotate%20Image/array.c) |
@@ -31,5 +34,5 @@ My solutions for leetcode coding problems, maybe using multiple languages.
 | 23 | [Merge k Sorted Lists](https://leetcode.cn/problems/Merge-k-Sorted-Lists) | Hard | [C](./solutions/data%20structures/Merge%20k%20Sorted%20Lists/list.c) |
 | 19 | [Remove Nth Node From End of List](https://leetcode.cn/problems/Remove-Nth-Node-From-End-of-List) | Medium | [C](./solutions/data%20structures/Remove%20Nth%20Node%20From%20End%20of%20List/list.c) |
 | 8 | [String to Integer (atoi)](https://leetcode.cn/problems/String-to-Integer-(atoi)) | Medium | [C](./solutions/functions/String%20to%20Integer%20(atoi)/func.c) |
-| 5 | [Longest Palindromic Substring](https://leetcode.cn/problems/Longest-Palindromic-Substring) | Hard | [DP-C](./solutions/algrithoms/Longest%20Palindromic%20Substring/dp.c), [CenterExpand-C](./solutions/algrithoms/Longest%20Palindromic%20Substring/center-expand.c) |
+| 5 | [Longest Palindromic Substring](https://leetcode.cn/problems/Longest-Palindromic-Substring) | Hard | [CenterExpand-C](./solutions/algrithoms/Longest%20Palindromic%20Substring/center-expand.c), [DP-C](./solutions/algrithoms/Longest%20Palindromic%20Substring/dp.c) |
 
