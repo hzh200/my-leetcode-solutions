@@ -25,3 +25,4 @@ problems.append(Problem(220, 'Contains Duplicate III', Difficulty.Hard, Type.Alg
 problems.append(Problem(134, 'Gas Station', Difficulty.Medium, Type.Algrithom))
 problems.append(Problem(153, 'Find Minimum in Rotated Sorted Array', Difficulty.Medium, Type.Algrithom))
 problems.append(Problem(154, 'Find Minimum in Rotated Sorted Array II', Difficulty.Hard, Type.Algrithom))
+problems.append(Problem(40, 'Combination Sum II', Difficulty.Medium, Type.Algrithom))
