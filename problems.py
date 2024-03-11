@@ -27,3 +27,4 @@ problems.append(Problem(153, 'Find Minimum in Rotated Sorted Array', Difficulty.
 problems.append(Problem(154, 'Find Minimum in Rotated Sorted Array II', Difficulty.Hard, Type.Algrithom))
 problems.append(Problem(40, 'Combination Sum II', Difficulty.Medium, Type.Algrithom))
 problems.append(Problem(10, 'Regular Expression Matching', Difficulty.Hard, Type.Algrithom))
+problems.append(Problem(44, 'Wildcard Matching', Difficulty.Hard, Type.Algrithom))

@@ -30,6 +30,7 @@ My solutions for leetcode coding problems, maybe using multiple languages.
 | 70 | [Climbing Stairs](https://leetcode.cn/problems/Climbing-Stairs) | Easy | [DP-C](./solutions/algrithoms/Climbing%20Stairs/dp.c) |
 | 51 | [N-Queens](https://leetcode.cn/problems/N-Queens) | Hard | [BackTracking-C](./solutions/algrithoms/N-Queens/backtracking.c) |
 | 48 | [Rotate Image](https://leetcode.cn/problems/Rotate-Image) | Medium | [C](./solutions/data%20structures/Rotate%20Image/array.c) |
+| 44 | [Wildcard Matching](https://leetcode.cn/problems/Wildcard-Matching) | Hard | [DP-JavaScript](./solutions/algrithoms/Wildcard%20Matching/dp.js), [DP-Go](./solutions/algrithoms/Wildcard%20Matching/dp.go) |
 | 40 | [Combination Sum II](https://leetcode.cn/problems/Combination-Sum-II) | Medium | [BackTracking-Go](./solutions/algrithoms/Combination%20Sum%20II/backtracking.go) |
 | 27 | [Remove Element](https://leetcode.cn/problems/Remove-Element) | Easy | [C](./solutions/data%20structures/Remove%20Element/array.c) |
 | 23 | [Merge k Sorted Lists](https://leetcode.cn/problems/Merge-k-Sorted-Lists) | Hard | [C](./solutions/data%20structures/Merge%20k%20Sorted%20Lists/list.c) |
