@@ -21,12 +21,13 @@ My solutions for leetcode coding problems, maybe using multiple languages.
 | 220 | [Contains Duplicate III](https://leetcode.cn/problems/Contains-Duplicate-III) | Hard | [SlidingWindow-JavaScript](./solutions/algrithoms/Contains%20Duplicate%20III/sliding-window.js), [Bucket-JavaScript](./solutions/algrithoms/Contains%20Duplicate%20III/bucket.js) |
 | 213 | [House Robber II](https://leetcode.cn/problems/House-Robber-II) | Medium | [DP-C](./solutions/algrithoms/House%20Robber%20II/dp.c) |
 | 198 | [House Robber](https://leetcode.cn/problems/House-Robber) | Medium | [DP-C](./solutions/algrithoms/House%20Robber/dp.c) |
-| 154 | [Find Minimum in Rotated Sorted Array II](https://leetcode.cn/problems/Find-Minimum-in-Rotated-Sorted-Array-II) | Hard | [Search-JavaScript](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array%20II/search.js) |
-| 153 | [Find Minimum in Rotated Sorted Array](https://leetcode.cn/problems/Find-Minimum-in-Rotated-Sorted-Array) | Medium | [Search-JavaScript](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array/search.js) |
+| 154 | [Find Minimum in Rotated Sorted Array II](https://leetcode.cn/problems/Find-Minimum-in-Rotated-Sorted-Array-II) | Hard | [BinarySearch-JavaScript](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array%20II/binary-search.js), [BinarySearch-Go](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array%20II/binary-search.go) |
+| 153 | [Find Minimum in Rotated Sorted Array](https://leetcode.cn/problems/Find-Minimum-in-Rotated-Sorted-Array) | Medium | [BinarySearch-JavaScript](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array/binary-search.js), [BinarySearch-Go](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array/binary-search.go) |
 | 146 | [LRU Cache](https://leetcode.cn/problems/LRU-Cache) | Medium | [JavaScript](./solutions/functions/LRU%20Cache/struct.js) |
 | 142 | [Linked List Cycle II](https://leetcode.cn/problems/Linked-List-Cycle-II) | Medium | [C](./solutions/data%20structures/Linked%20List%20Cycle%20II/list.c) |
 | 140 | [Word Break II](https://leetcode.cn/problems/Word-Break-II) | Hard | [BackTracking-C](./solutions/algrithoms/Word%20Break%20II/backtracking.c), [BackTracking-JavaScript](./solutions/algrithoms/Word%20Break%20II/backtracking.js), [MemoizationBacktracking-JavaScript](./solutions/algrithoms/Word%20Break%20II/memoization-backtracking.js) |
 | 134 | [Gas Station](https://leetcode.cn/problems/Gas-Station) | Medium | [Greedy-JavaScript](./solutions/algrithoms/Gas%20Station/greedy.js) |
+| 72 | [Edit Distance](https://leetcode.cn/problems/Edit-Distance) | Medium | [DP-Go](./solutions/algrithoms/Edit%20Distance/dp.go) |
 | 70 | [Climbing Stairs](https://leetcode.cn/problems/Climbing-Stairs) | Easy | [DP-C](./solutions/algrithoms/Climbing%20Stairs/dp.c) |
 | 51 | [N-Queens](https://leetcode.cn/problems/N-Queens) | Hard | [BackTracking-C](./solutions/algrithoms/N-Queens/backtracking.c) |
 | 48 | [Rotate Image](https://leetcode.cn/problems/Rotate-Image) | Medium | [C](./solutions/data%20structures/Rotate%20Image/array.c) |
@@ -38,4 +39,5 @@ My solutions for leetcode coding problems, maybe using multiple languages.
 | 10 | [Regular Expression Matching](https://leetcode.cn/problems/Regular-Expression-Matching) | Hard | [DP-JavaScript](./solutions/algrithoms/Regular%20Expression%20Matching/dp.js), [DP-Go](./solutions/algrithoms/Regular%20Expression%20Matching/dp.go), [DP-C](./solutions/algrithoms/Regular%20Expression%20Matching/dp.c) |
 | 8 | [String to Integer (atoi)](https://leetcode.cn/problems/String-to-Integer-(atoi)) | Medium | [C](./solutions/functions/String%20to%20Integer%20(atoi)/func.c) |
 | 5 | [Longest Palindromic Substring](https://leetcode.cn/problems/Longest-Palindromic-Substring) | Hard | [DP-C](./solutions/algrithoms/Longest%20Palindromic%20Substring/dp.c), [CenterExpand-C](./solutions/algrithoms/Longest%20Palindromic%20Substring/center-expand.c) |
+| 1 | [Two Sum](https://leetcode.cn/problems/Two-Sum) | Easy | [Iterate-Go](./solutions/algrithoms/Two%20Sum/iterate.go) |
 
