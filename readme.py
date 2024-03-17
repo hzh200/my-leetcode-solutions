@@ -8,6 +8,9 @@ DOMAINS_PATH = posixpath.join(BASE_PATH, 'domains')
 SOLUTIONS_PATH = posixpath.join(BASE_PATH, 'solutions')
 DOMAIN_RELATIVE_BASE_PATH = posixpath.join('..', '..')
 
+PROJECT_TITLE = 'my-leetcode-solutions'
+PROJECT_DESCRIPTION = 'My solutions for leetcode coding problems, maybe using multiple languages.'
+
 def fetch_problems(sort=True):
     from problems import problems
     if sort:
@@ -33,7 +36,7 @@ def fetch_domains():
         domains[Type.Function].append([domain, posixpath.join(DOMAINS_PATH, Type.Function.value + 's', domain + '.md')])
     return domains
 
-def get_problem_table_rows(): 
+def get_problem_table_rows():
     table_rows = []
     for problem in fetch_problems():
         if problem.type.value == Type.Algrithom.value:
@@ -43,7 +46,7 @@ def get_problem_table_rows():
         table_rows.append([problem.no, problem.name, WEBSITE_PROBLEMS_URL + problem.name.replace(' ', '-'), problem.difficulty.value, ', '.join(solution_items)])
     return table_rows
 
-def get_domain_table_rows(domain_title): 
+def get_domain_table_rows(domain_title):
     table_rows = []
     for problem in fetch_problems():
         solutions = ['[{0}]({1})'.format(solution.language.value, posixpath.join(DOMAIN_RELATIVE_BASE_PATH, solution.link.replace(' ', '%20'))) for solution in filter(lambda solution: solution.domain.value == domain_title, problem.solutions)]
@@ -78,25 +81,22 @@ def generate_readme_file(): # Generate readme file.
         for domain in type_domains:
             generate_domain_file(domain)
 
-    project_title = 'leetcode-solutions'
-    project_description = 'My solutions for leetcode coding problems, maybe using multiple languages.'
     domain_title = 'domains'
     problems_title = 'problems'
-    
     domain_index = '\n'.join(['#### {0}\n{1}'.format(title, content) for title, content in get_domain_index_sections(domains)])
 
     table_head = '| No | Name | Difficulty | Solutions |'
     table_spliter = '| -- | -- | -- | -- |'
     table_body = '\n'.join(['| {0} | [{1}]({2}) | {3} | {4} |'.format(row[0], row[1], row[2], row[3], row[4]) for row in get_problem_table_rows()])
 
-    readme_file = open(posixpath.join(BASE_PATH, 'README.md'), 'w') 
-    readme_file.write('#' + ' ' + project_title + '\n')
-    readme_file.write(project_description + '\n')
+    readme_file = open(posixpath.join(BASE_PATH, 'README.md'), 'w')
+    readme_file.write('#' + ' ' + PROJECT_TITLE + '\n')
+    readme_file.write(PROJECT_DESCRIPTION + '\n')
     readme_file.write('\n')
-    readme_file.write('##' + ' ' + domain_title + '\n')
+    readme_file.write('## {0}\n'.format(domain_title))
     readme_file.write(domain_index + '\n')
     readme_file.write('\n')
-    readme_file.write('##' + ' ' + problems_title + '\n')
+    readme_file.write('## {0}\n'.format(problems_title))
     readme_file.write(table_head + '\n')
     readme_file.write(table_spliter + '\n')
     readme_file.write(table_body + '\n')
