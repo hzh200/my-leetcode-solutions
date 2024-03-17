@@ -30,3 +30,7 @@ problems.append(Problem(10, 'Regular Expression Matching', Difficulty.Hard, Type
 problems.append(Problem(44, 'Wildcard Matching', Difficulty.Hard, Type.Algrithom))
 problems.append(Problem(72, 'Edit Distance', Difficulty.Medium, Type.Algrithom))
 problems.append(Problem(1, 'Two Sum', Difficulty.Easy, Type.Algrithom))
+problems.append(Problem(155, 'Min Stack', Difficulty.Medium, Type.Data_Structure))
+problems.append(Problem(160, 'Intersection of Two Linked Lists', Difficulty.Easy, Type.Data_Structure))
+problems.append(Problem(79, 'Word Search', Difficulty.Medium, Type.Algrithom))
+problems.append(Problem(208, 'Implement Trie (Prefix Tree)', Difficulty.Medium, Type.Data_Structure))

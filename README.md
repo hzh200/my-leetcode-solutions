@@ -19,14 +19,18 @@ My solutions for leetcode coding problems, maybe using multiple languages.
 | 416 | [Partition Equal Subset Sum](https://leetcode.cn/problems/Partition-Equal-Subset-Sum) | Medium | [DP-C](./solutions/algrithoms/Partition%20Equal%20Subset%20Sum/dp.c) |
 | 300 | [Longest Increasing Subsequence](https://leetcode.cn/problems/Longest-Increasing-Subsequence) | Medium | [Greedy-C](./solutions/algrithoms/Longest%20Increasing%20Subsequence/greedy.c), [DP-C](./solutions/algrithoms/Longest%20Increasing%20Subsequence/dp.c) |
 | 220 | [Contains Duplicate III](https://leetcode.cn/problems/Contains-Duplicate-III) | Hard | [SlidingWindow-JavaScript](./solutions/algrithoms/Contains%20Duplicate%20III/sliding-window.js), [Bucket-JavaScript](./solutions/algrithoms/Contains%20Duplicate%20III/bucket.js) |
-| 213 | [House Robber II](https://leetcode.cn/problems/House-Robber-II) | Medium | [DP-C](./solutions/algrithoms/House%20Robber%20II/dp.c) |
+| 213 | [House Robber II](https://leetcode.cn/problems/House-Robber-II) | Medium | [DP-Go](./solutions/algrithoms/House%20Robber%20II/dp.go), [DP-C](./solutions/algrithoms/House%20Robber%20II/dp.c) |
+| 208 | [Implement Trie (Prefix Tree)](https://leetcode.cn/problems/Implement-Trie-(Prefix-Tree)) | Medium | [Go](./solutions/data%20structures/Implement%20Trie%20(Prefix%20Tree)/trie.go) |
 | 198 | [House Robber](https://leetcode.cn/problems/House-Robber) | Medium | [DP-C](./solutions/algrithoms/House%20Robber/dp.c) |
+| 160 | [Intersection of Two Linked Lists](https://leetcode.cn/problems/Intersection-of-Two-Linked-Lists) | Easy | [Go](./solutions/data%20structures/Intersection%20of%20Two%20Linked%20Lists/list.go) |
+| 155 | [Min Stack](https://leetcode.cn/problems/Min-Stack) | Medium | [Go](./solutions/data%20structures/Min%20Stack/stack.go) |
 | 154 | [Find Minimum in Rotated Sorted Array II](https://leetcode.cn/problems/Find-Minimum-in-Rotated-Sorted-Array-II) | Hard | [BinarySearch-JavaScript](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array%20II/binary-search.js), [BinarySearch-Go](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array%20II/binary-search.go) |
 | 153 | [Find Minimum in Rotated Sorted Array](https://leetcode.cn/problems/Find-Minimum-in-Rotated-Sorted-Array) | Medium | [BinarySearch-JavaScript](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array/binary-search.js), [BinarySearch-Go](./solutions/algrithoms/Find%20Minimum%20in%20Rotated%20Sorted%20Array/binary-search.go) |
 | 146 | [LRU Cache](https://leetcode.cn/problems/LRU-Cache) | Medium | [JavaScript](./solutions/functions/LRU%20Cache/struct.js) |
 | 142 | [Linked List Cycle II](https://leetcode.cn/problems/Linked-List-Cycle-II) | Medium | [C](./solutions/data%20structures/Linked%20List%20Cycle%20II/list.c) |
 | 140 | [Word Break II](https://leetcode.cn/problems/Word-Break-II) | Hard | [BackTracking-C](./solutions/algrithoms/Word%20Break%20II/backtracking.c), [BackTracking-JavaScript](./solutions/algrithoms/Word%20Break%20II/backtracking.js), [MemoizationBacktracking-JavaScript](./solutions/algrithoms/Word%20Break%20II/memoization-backtracking.js) |
 | 134 | [Gas Station](https://leetcode.cn/problems/Gas-Station) | Medium | [Greedy-JavaScript](./solutions/algrithoms/Gas%20Station/greedy.js) |
+| 79 | [Word Search](https://leetcode.cn/problems/Word-Search) | Medium | [BackTracking-Go](./solutions/algrithoms/Word%20Search/backtracking.go) |
 | 72 | [Edit Distance](https://leetcode.cn/problems/Edit-Distance) | Medium | [DP-Go](./solutions/algrithoms/Edit%20Distance/dp.go) |
 | 70 | [Climbing Stairs](https://leetcode.cn/problems/Climbing-Stairs) | Easy | [DP-C](./solutions/algrithoms/Climbing%20Stairs/dp.c) |
 | 51 | [N-Queens](https://leetcode.cn/problems/N-Queens) | Hard | [BackTracking-C](./solutions/algrithoms/N-Queens/backtracking.c) |
