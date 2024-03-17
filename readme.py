@@ -1,6 +1,6 @@
 import os
 import posixpath
-from definitions import Type, AlgorithmsDomain, DataStructuresDomain, FunctionsDomain, IndieDomain, domain_mapping, language_mapping, Solution
+from definitions import Type, AlgorithmsDomain, DataStructuresDomain, ImplementationsDomain, IndieDomain, domain_mapping, language_mapping, Solution
 
 WEBSITE_PROBLEMS_URL = 'https://leetcode.cn/problems/'
 BASE_PATH = '.'
@@ -27,13 +27,13 @@ def fetch_domains():
     domains = {}
     domains[Type.Algrithom] = []
     domains[Type.Data_Structure] = []
-    domains[Type.Function] = []
+    domains[Type.Implementation] = []
     for domain in [domain.value for domain in AlgorithmsDomain]:
         domains[Type.Algrithom].append([domain, posixpath.join(DOMAINS_PATH, Type.Algrithom.value + 's', domain + '.md')])
     for domain in [domain.value for domain in DataStructuresDomain]:
         domains[Type.Data_Structure].append([domain, posixpath.join(DOMAINS_PATH, Type.Data_Structure.value + 's', domain + '.md')])
-    for domain in [domain.value for domain in FunctionsDomain]:
-        domains[Type.Function].append([domain, posixpath.join(DOMAINS_PATH, Type.Function.value + 's', domain + '.md')])
+    for domain in [domain.value for domain in ImplementationsDomain]:
+        domains[Type.Implementation].append([domain, posixpath.join(DOMAINS_PATH, Type.Implementation.value + 's', domain + '.md')])
     return domains
 
 def get_problem_table_rows():

@@ -2,8 +2,8 @@ from enum import Enum
 
 class Type(Enum):
     Algrithom = 'Algrithom'
-    Function = 'Function'
     Data_Structure = 'Data Structure'
+    Implementation = 'Implementation'
 
 class AlgorithmsDomain(Enum):
     String = 'String'
@@ -24,7 +24,7 @@ class DataStructuresDomain(Enum):
     Array = 'Array'
     LinkedList = 'Linked List'
 
-class FunctionsDomain(Enum):
+class ImplementationsDomain(Enum):
     Function = 'Function'
     Data_Structure = 'Data Structure'
 
@@ -38,8 +38,8 @@ domain_mapping = {
     'array': DataStructuresDomain.Array,
     'list': DataStructuresDomain.LinkedList,
 
-    'func': FunctionsDomain.Function,
-    'struct': FunctionsDomain.Data_Structure
+    'func': ImplementationsDomain.Function,
+    'struct': ImplementationsDomain.Data_Structure
 }
 
 class Difficulty(Enum):
@@ -73,7 +73,7 @@ class Solution:
         self.link = link
 
     language: Language
-    domain: AlgorithmsDomain | DataStructuresDomain | FunctionsDomain | IndieDomain
+    domain: AlgorithmsDomain | DataStructuresDomain | ImplementationsDomain | IndieDomain
     link: str
 
 class Problem:
