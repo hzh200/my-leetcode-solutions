@@ -20,7 +20,10 @@ def fetch_problems(sort=True):
         solutions_path = posixpath.join(SOLUTIONS_PATH, str(problem.type.value).lower() + 's', problem.name)
         for solution_path in os.listdir(solutions_path):
             type, suffix = solution_path.split('.')
-            problem.solutions.append(Solution(language_mapping[suffix], domain_mapping[type] if type in domain_mapping else IndieDomain(type), posixpath.join(solutions_path, solution_path)))
+            if problem.type == Type.Implementation:
+                problem.solutions.append(Solution(language_mapping[suffix], problem.domain, posixpath.join(solutions_path, solution_path)))
+            else:
+                problem.solutions.append(Solution(language_mapping[suffix], domain_mapping[type] if type in domain_mapping else IndieDomain(type), posixpath.join(solutions_path, solution_path)))
     return problems
 
 def fetch_domains():
@@ -49,11 +52,11 @@ def get_problem_table_rows():
 def get_domain_table_rows(domain_title):
     table_rows = []
     for problem in fetch_problems():
-        solutions = ['[{0}]({1})'.format(solution.language.value, posixpath.join(DOMAIN_RELATIVE_BASE_PATH, solution.link.replace(' ', '%20'))) for solution in filter(lambda solution: solution.domain.value == domain_title, problem.solutions)]
+        solutions = ['[{0}]({1})'.format(solution.language.value, posixpath.join(DOMAIN_RELATIVE_BASE_PATH, solution.link.replace(' ', '%20'))) 
+                        for solution in filter(lambda solution: solution.domain.value == domain_title, problem.solutions)]
         if len(solutions) == 0:
             continue
-        table_rows.append([problem.no, problem.name, WEBSITE_PROBLEMS_URL + problem.name.replace(' ', '-'), \
-            ', '.join(solutions)])
+        table_rows.append([problem.no, problem.name, WEBSITE_PROBLEMS_URL + problem.name.replace(' ', '-'), ', '.join(solutions)])
     return table_rows
 
 def get_domain_index_sections(domains):

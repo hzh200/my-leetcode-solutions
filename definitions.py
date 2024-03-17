@@ -15,10 +15,10 @@ class AlgorithmsDomain(Enum):
 class IndieDomain:
     name: str
     value: str
-    def __init__(self, value: str) -> None:
-        value = ''.join([part.capitalize() for part in value.split('-')])
-        self.name = value
-        self.value = value
+    def __init__(self, domain: str) -> None:
+        domain = ''.join([part.capitalize() for part in domain.split('-')])
+        self.name = domain
+        self.value = domain
 
 class DataStructuresDomain(Enum):
     Array = 'Array'
@@ -36,10 +36,7 @@ domain_mapping = {
     'backtracking': AlgorithmsDomain.BackTracking,
 
     'array': DataStructuresDomain.Array,
-    'list': DataStructuresDomain.LinkedList,
-
-    'func': ImplementationsDomain.Function,
-    'struct': ImplementationsDomain.Data_Structure
+    'linked-list': DataStructuresDomain.LinkedList,
 }
 
 class Difficulty(Enum):
@@ -77,14 +74,16 @@ class Solution:
     link: str
 
 class Problem:
-    def __init__(self, no, name, difficulty, type) -> None:
+    def __init__(self, no, name, difficulty, type, domain=None) -> None:
         self.no = no
         self.name = name
         self.difficulty = difficulty
         self.type = type
+        self.domain = domain
 
     no: int
     name: str
     difficulty: Difficulty
     type: Type
+    domain: ImplementationsDomain # for Implementation type only.
     solutions: list[Solution]
