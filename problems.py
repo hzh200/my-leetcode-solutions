@@ -34,3 +34,7 @@ problems.append(Problem(155, 'Min Stack', Difficulty.Medium, Type.Implementation
 problems.append(Problem(160, 'Intersection of Two Linked Lists', Difficulty.Easy, Type.Data_Structure))
 problems.append(Problem(79, 'Word Search', Difficulty.Medium, Type.Algrithom))
 problems.append(Problem(208, 'Implement Trie (Prefix Tree)', Difficulty.Medium, Type.Implementation, domain=ImplementationsDomain.Data_Structure))
+problems.append(Problem(212, 'Word Search II', Difficulty.Hard, Type.Algrithom))
+problems.append(Problem(854, 'K-Similar Strings', Difficulty.Hard, Type.Algrithom))
+problems.append(Problem(1392, 'Longest Happy Prefix', Difficulty.Hard, Type.Algrithom))
+problems.append(Problem(162, 'Find Peak Element', Difficulty.Medium, Type.Algrithom))
