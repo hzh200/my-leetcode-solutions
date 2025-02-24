@@ -1,40 +1,61 @@
-from definitions import Problem, Type, Difficulty, ImplementationsDomain
+from src.definitions import Type, Difficulty, ImplsDomain
 
-problems: list[Problem] = []
-
-problems.append(Problem(1768, 'Merge Strings Alternately', Difficulty.Easy, Type.Algrithom))
-problems.append(Problem(198, 'House Robber', Difficulty.Medium, Type.Algrithom))
-problems.append(Problem(213, 'House Robber II', Difficulty.Medium, Type.Algrithom))
-problems.append(Problem(474, 'Ones and Zeroes', Difficulty.Medium, Type.Algrithom))
-problems.append(Problem(70, 'Climbing Stairs', Difficulty.Easy, Type.Algrithom))
-problems.append(Problem(8, 'String to Integer (atoi)', Difficulty.Medium, Type.Implementation, domain=ImplementationsDomain.Function))
-problems.append(Problem(27, 'Remove Element', Difficulty.Easy, Type.Data_Structure))
-problems.append(Problem(300, 'Longest Increasing Subsequence', Difficulty.Medium, Type.Algrithom))
-problems.append(Problem(48, 'Rotate Image', Difficulty.Medium, Type.Data_Structure))
-problems.append(Problem(142, 'Linked List Cycle II', Difficulty.Medium, Type.Data_Structure))
-problems.append(Problem(23, 'Merge k Sorted Lists', Difficulty.Hard, Type.Data_Structure))
-problems.append(Problem(19, 'Remove Nth Node From End of List', Difficulty.Medium, Type.Data_Structure))
-problems.append(Problem(416, 'Partition Equal Subset Sum', Difficulty.Medium, Type.Algrithom))
-problems.append(Problem(146, 'LRU Cache', Difficulty.Medium, Type.Implementation, domain=ImplementationsDomain.Data_Structure))
-problems.append(Problem(51, 'N-Queens', Difficulty.Hard, Type.Algrithom))
-problems.append(Problem(5, 'Longest Palindromic Substring', Difficulty.Hard, Type.Algrithom))
-problems.append(Problem(140, 'Word Break II', Difficulty.Hard, Type.Algrithom))
-problems.append(Problem(1143, 'Longest Common Subsequence', Difficulty.Medium, Type.Algrithom))
-problems.append(Problem(827, 'Making A Large Island', Difficulty.Hard, Type.Algrithom))
-problems.append(Problem(220, 'Contains Duplicate III', Difficulty.Hard, Type.Algrithom))
-problems.append(Problem(134, 'Gas Station', Difficulty.Medium, Type.Algrithom))
-problems.append(Problem(153, 'Find Minimum in Rotated Sorted Array', Difficulty.Medium, Type.Algrithom))
-problems.append(Problem(154, 'Find Minimum in Rotated Sorted Array II', Difficulty.Hard, Type.Algrithom))
-problems.append(Problem(40, 'Combination Sum II', Difficulty.Medium, Type.Algrithom))
-problems.append(Problem(10, 'Regular Expression Matching', Difficulty.Hard, Type.Algrithom))
-problems.append(Problem(44, 'Wildcard Matching', Difficulty.Hard, Type.Algrithom))
-problems.append(Problem(72, 'Edit Distance', Difficulty.Medium, Type.Algrithom))
-problems.append(Problem(1, 'Two Sum', Difficulty.Easy, Type.Algrithom))
-problems.append(Problem(155, 'Min Stack', Difficulty.Medium, Type.Implementation, domain=ImplementationsDomain.Data_Structure))
-problems.append(Problem(160, 'Intersection of Two Linked Lists', Difficulty.Easy, Type.Data_Structure))
-problems.append(Problem(79, 'Word Search', Difficulty.Medium, Type.Algrithom))
-problems.append(Problem(208, 'Implement Trie (Prefix Tree)', Difficulty.Medium, Type.Implementation, domain=ImplementationsDomain.Data_Structure))
-problems.append(Problem(212, 'Word Search II', Difficulty.Hard, Type.Algrithom))
-problems.append(Problem(854, 'K-Similar Strings', Difficulty.Hard, Type.Algrithom))
-problems.append(Problem(1392, 'Longest Happy Prefix', Difficulty.Hard, Type.Algrithom))
-problems.append(Problem(162, 'Find Peak Element', Difficulty.Medium, Type.Algrithom))
+problem_infos = [
+    [1768, 'Merge Strings Alternately', Difficulty.Easy, Type.Data_Structure],
+    [198, 'House Robber', Difficulty.Medium, Type.Algrithom],
+    [213, 'House Robber II', Difficulty.Medium, Type.Algrithom],
+    [474, 'Ones and Zeroes', Difficulty.Medium, Type.Algrithom],
+    [70, 'Climbing Stairs', Difficulty.Easy, Type.Algrithom],
+    [8, 'String to Integer (atoi)', Difficulty.Medium, Type.Implementation, ImplsDomain.Function],
+    [27, 'Remove Element', Difficulty.Easy, Type.Data_Structure],
+    [300, 'Longest Increasing Subsequence', Difficulty.Medium, Type.Algrithom],
+    [48, 'Rotate Image', Difficulty.Medium, Type.Data_Structure],
+    [142, 'Linked List Cycle II', Difficulty.Medium, Type.Data_Structure],
+    [23, 'Merge k Sorted Lists', Difficulty.Hard, Type.Data_Structure],
+    [19, 'Remove Nth Node From End of List', Difficulty.Medium, Type.Data_Structure],
+    [416, 'Partition Equal Subset Sum', Difficulty.Medium, Type.Algrithom],
+    [146, 'LRU Cache', Difficulty.Medium, Type.Implementation, ImplsDomain.Data_Structure],
+    [51, 'N-Queens', Difficulty.Hard, Type.Algrithom],
+    [5, 'Longest Palindromic Substring', Difficulty.Hard, Type.Algrithom],
+    [140, 'Word Break II', Difficulty.Hard, Type.Algrithom],
+    [1143, 'Longest Common Subsequence', Difficulty.Medium, Type.Algrithom],
+    [827, 'Making A Large Island', Difficulty.Hard, Type.Algrithom],
+    [220, 'Contains Duplicate III', Difficulty.Hard, Type.Algrithom],
+    [134, 'Gas Station', Difficulty.Medium, Type.Algrithom],
+    [153, 'Find Minimum in Rotated Sorted Array', Difficulty.Medium, Type.Algrithom],
+    [154, 'Find Minimum in Rotated Sorted Array II', Difficulty.Hard, Type.Algrithom],
+    [40, 'Combination Sum II', Difficulty.Medium, Type.Algrithom],
+    [10, 'Regular Expression Matching', Difficulty.Hard, Type.Algrithom],
+    [44, 'Wildcard Matching', Difficulty.Hard, Type.Algrithom],
+    [72, 'Edit Distance', Difficulty.Medium, Type.Algrithom],
+    [1, 'Two Sum', Difficulty.Easy, Type.Algrithom],
+    [155, 'Min Stack', Difficulty.Medium, Type.Implementation, ImplsDomain.Data_Structure],
+    [160, 'Intersection of Two Linked Lists', Difficulty.Easy, Type.Data_Structure],
+    [79, 'Word Search', Difficulty.Medium, Type.Algrithom],
+    [208, 'Implement Trie (Prefix Tree)', Difficulty.Medium, Type.Implementation, ImplsDomain.Data_Structure],
+    [212, 'Word Search II', Difficulty.Hard, Type.Algrithom],
+    [854, 'K-Similar Strings', Difficulty.Hard, Type.Algrithom],
+    [1392, 'Longest Happy Prefix', Difficulty.Hard, Type.Algrithom],
+    [162, 'Find Peak Element', Difficulty.Medium, Type.Algrithom],
+    [207, 'Course Schedule', Difficulty.Medium, Type.Algrithom],
+    [210, 'Course Schedule II', Difficulty.Medium, Type.Algrithom],
+    [1540, 'Can Convert String in K Moves', Difficulty.Medium, Type.Algrithom],
+    [2381, 'Shifting Letters II', Difficulty.Medium, Type.Data_Structure],
+    [226, 'Invert Binary Tree', Difficulty.Easy, Type.Data_Structure],
+    [540, 'Single Element in a Sorted Array', Difficulty.Medium, Type.Algrithom],
+    [211, 'Design Add and Search Words Data Structure', Difficulty.Medium, Type.Implementation, ImplsDomain.Data_Structure],
+    [42, 'Trapping Rain Water', Difficulty.Medium, Type.Algrithom],
+    [60, 'Permutation Sequence', Difficulty.Hard, Type.Algrithom],
+    [236, 'Lowest Common Ancestor of a Binary Tree', Difficulty.Easy, Type.Data_Structure],
+    [1884, 'Egg Drop With 2 Eggs and N Floors', Difficulty.Medium, Type.Algrithom],
+    [218, 'The Skyline Problem', Difficulty.Hard, Type.Algrithom],
+    [221, 'Maximal Square', Difficulty.Medium, Type.Algrithom],
+    [739, 'Daily Temperatures', Difficulty.Medium, Type.Algrithom],
+    [206, 'Reverse Linked List', Difficulty.Easy, Type.Data_Structure],
+    [200, 'Number of Islands', Difficulty.Medium, Type.Algrithom],
+    [234, 'Palindrome Linked List', Difficulty.Easy, Type.Data_Structure],
+    [283, 'Move Zeroes', Difficulty.Medium, Type.Algrithom],
+    [297, 'Serialize and Deserialize Binary Tree', Difficulty.Hard, Type.Implementation, ImplsDomain.Function],
+    [1, 'Two Sum', Difficulty.Easy, Type.Algrithom],
+    [49, 'Group Anagrams', Difficulty.Medium, Type.Algrithom]
+]

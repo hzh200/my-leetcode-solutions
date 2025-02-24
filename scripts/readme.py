@@ -1,18 +1,34 @@
+import sys
 import os
+import shutil
 import posixpath
-from definitions import Type, AlgorithmsDomain, DataStructuresDomain, ImplementationsDomain, IndieDomain, domain_mapping, language_mapping, Solution
+
+sys.path[0] = posixpath.join(sys.path[0], "..")
+from src.definitions import Problem, Type, AlgorithmsDomain, DataStructuresDomain, ImplsDomain, IndieDomain, domain_mapping, language_mapping, Solution
 
 WEBSITE_PROBLEMS_URL = 'https://leetcode.cn/problems/'
 BASE_PATH = '.'
+SRC_PATH = posixpath.join(BASE_PATH, 'src')
+SOLUTIONS_PATH = posixpath.join(SRC_PATH, 'solutions')
 DOMAINS_PATH = posixpath.join(BASE_PATH, 'domains')
-SOLUTIONS_PATH = posixpath.join(BASE_PATH, 'solutions')
+README_PATH = posixpath.join(BASE_PATH, 'README.md')
 DOMAIN_RELATIVE_BASE_PATH = posixpath.join('..', '..')
 
 PROJECT_TITLE = 'my-leetcode-solutions'
 PROJECT_DESCRIPTION = 'My solutions for leetcode coding problems, maybe using multiple languages.'
 
 def fetch_problems(sort=True):
-    from problems import problems
+    from problems import problem_infos
+    
+    problems: list[Problem] = []
+    for problem_info in problem_infos:
+        if len(problem_info) == 4:
+            problems.append(Problem(problem_info[0], problem_info[1], problem_info[2], problem_info[3]))
+        elif len(problem_info) == 5:
+            problems.append(Problem(problem_info[0], problem_info[1], problem_info[2], problem_info[3], domain=problem_info[4]))
+        else:
+            pass
+
     if sort:
         problems.sort(key=lambda p: p.no, reverse=True)
     for problem in problems: # Add solutions for problems.
@@ -35,7 +51,7 @@ def fetch_domains():
         domains[Type.Algrithom].append([domain, posixpath.join(DOMAINS_PATH, Type.Algrithom.value + 's', domain + '.md')])
     for domain in [domain.value for domain in DataStructuresDomain]:
         domains[Type.Data_Structure].append([domain, posixpath.join(DOMAINS_PATH, Type.Data_Structure.value + 's', domain + '.md')])
-    for domain in [domain.value for domain in ImplementationsDomain]:
+    for domain in [domain.value for domain in ImplsDomain]:
         domains[Type.Implementation].append([domain, posixpath.join(DOMAINS_PATH, Type.Implementation.value + 's', domain + '.md')])
     return domains
 
@@ -92,7 +108,7 @@ def generate_readme_file(): # Generate readme file.
     table_spliter = '| -- | -- | -- | -- |'
     table_body = '\n'.join(['| {0} | [{1}]({2}) | {3} | {4} |'.format(row[0], row[1], row[2], row[3], row[4]) for row in get_problem_table_rows()])
 
-    readme_file = open(posixpath.join(BASE_PATH, 'README.md'), 'w')
+    readme_file = open(README_PATH, 'w')
     readme_file.write('#' + ' ' + PROJECT_TITLE + '\n')
     readme_file.write(PROJECT_DESCRIPTION + '\n')
     readme_file.write('\n')
@@ -107,6 +123,10 @@ def generate_readme_file(): # Generate readme file.
     readme_file.close()
 
 def main(): # Generate README.md and corresponding domain markdown files automatically.
+    # os.rmdir(DOMAINS_PATH)
+    # os.removedirs(DOMAINS_PATH)
+    shutil.rmtree(DOMAINS_PATH)
+    os.remove(README_PATH)
     generate_readme_file()
 
 if __name__ == "__main__":

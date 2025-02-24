@@ -8,9 +8,22 @@ class Type(Enum):
 class AlgorithmsDomain(Enum):
     String = 'String'
     DynamicProgramming = 'DP'
-    Search = 'Search'
+    DFS = 'DFS'
+    BFS = 'BFS'
+    ASTAR = 'AStar'
+    BinarySearch = 'BinarySearch'
     Greedy = 'Greedy'
     BackTracking = 'BackTracking'
+    Bit = 'Bit'
+    Iterate = 'Iterate'
+    TwoPointers = 'TwoPointers'
+    HashTable = 'HashTable'
+    Heap = 'Heap'
+    Math = 'Math'
+    KMP = 'KMP'
+    Stack = 'Stack'
+    Bucket = 'bucket'
+    SlidingWindow = 'SlidingWindow'
 
 class IndieDomain:
     name: str
@@ -24,18 +37,31 @@ class DataStructuresDomain(Enum):
     Array = 'Array'
     LinkedList = 'Linked List'
 
-class ImplementationsDomain(Enum):
+class ImplsDomain(Enum):
     Function = 'Function'
     Data_Structure = 'Data Structure'
 
 domain_mapping = {
-    'string': AlgorithmsDomain.String,
     'dp': AlgorithmsDomain.DynamicProgramming,
-    'search': AlgorithmsDomain.Search,
+    'dfs': AlgorithmsDomain.DFS,
+    'bfs': AlgorithmsDomain.BFS,
+    'a-star': AlgorithmsDomain.ASTAR,
+    'binary-search': AlgorithmsDomain.BinarySearch,
     'greedy': AlgorithmsDomain.Greedy,
     'backtracking': AlgorithmsDomain.BackTracking,
+    'bit': AlgorithmsDomain.Bit,
+    'iterate': AlgorithmsDomain.Iterate,
+    'two-pointers': AlgorithmsDomain.TwoPointers,
+    'hash-table': AlgorithmsDomain.HashTable,
+    'heap': AlgorithmsDomain.Heap,
+    'math': AlgorithmsDomain.Math,
+    'kmp': AlgorithmsDomain.KMP,
+    'stack': AlgorithmsDomain.Stack,
+    'bucket': AlgorithmsDomain.Bucket,
+    'sliding-window': AlgorithmsDomain.SlidingWindow,
 
     'array': DataStructuresDomain.Array,
+    'string': AlgorithmsDomain.String,
     'linked-list': DataStructuresDomain.LinkedList,
 }
 
@@ -70,7 +96,7 @@ class Solution:
         self.link = link
 
     language: Language
-    domain: AlgorithmsDomain | DataStructuresDomain | ImplementationsDomain | IndieDomain
+    domain: AlgorithmsDomain | DataStructuresDomain | ImplsDomain | IndieDomain
     link: str
 
 class Problem:
@@ -85,5 +111,5 @@ class Problem:
     name: str
     difficulty: Difficulty
     type: Type
-    domain: ImplementationsDomain # for Implementation type only.
+    domain: ImplsDomain # for Implementation type only.
     solutions: list[Solution]

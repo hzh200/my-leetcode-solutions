@@ -1,5 +1,0 @@
-# Cache
-| No | Name | Solution |
-| -- | -- | -- |
-
-

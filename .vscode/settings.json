@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "random": "c",
-        "stdlib.h": "c",
-        "string.h": "c"
-    }
-}

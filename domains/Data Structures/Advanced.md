@@ -1,5 +1,0 @@
-# Advanced
-| No | Name | Solution |
-| -- | -- | -- |
-
-
