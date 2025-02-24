@@ -72,7 +72,7 @@ class Difficulty(Enum):
 
 class Language(Enum):
     C = 'C'
-    CPP = 'C++'
+    CC = 'C++'
     Java = 'Java'
     JavaScript = 'JavaScript'
     Go = 'Go'
@@ -81,7 +81,7 @@ class Language(Enum):
 
 language_mapping = {
     'c': Language.C,
-    'cpp': Language.CPP,
+    'cc': Language.CC,
     'java': Language.Java,
     'js': Language.JavaScript,
     'ts': Language.Typescript,

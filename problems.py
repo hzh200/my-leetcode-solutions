@@ -56,6 +56,5 @@ problem_infos = [
     [234, 'Palindrome Linked List', Difficulty.Easy, Type.Data_Structure],
     [283, 'Move Zeroes', Difficulty.Medium, Type.Algrithom],
     [297, 'Serialize and Deserialize Binary Tree', Difficulty.Hard, Type.Implementation, ImplsDomain.Function],
-    [1, 'Two Sum', Difficulty.Easy, Type.Algrithom],
     [49, 'Group Anagrams', Difficulty.Medium, Type.Algrithom]
 ]

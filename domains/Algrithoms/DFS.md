@@ -5,5 +5,5 @@
 827 | [Making A Large Island](https://leetcode.cn/problems/Making-A-Large-Island) | [JavaScript](../.././src/solutions/algrithoms/Making%20A%20Large%20Island/dfs.js)
 210 | [Course Schedule II](https://leetcode.cn/problems/Course-Schedule-II) | [Go](../.././src/solutions/algrithoms/Course%20Schedule%20II/dfs.go)
 207 | [Course Schedule](https://leetcode.cn/problems/Course-Schedule) | [Go](../.././src/solutions/algrithoms/Course%20Schedule/dfs.go)
-200 | [Number of Islands](https://leetcode.cn/problems/Number-of-Islands) | [C++](../.././src/solutions/algrithoms/Number%20of%20Islands/dfs.cpp)
+200 | [Number of Islands](https://leetcode.cn/problems/Number-of-Islands) | [C++](../.././src/solutions/algrithoms/Number%20of%20Islands/dfs.cc)
 
