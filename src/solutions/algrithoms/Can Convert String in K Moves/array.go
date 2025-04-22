@@ -12,7 +12,6 @@ func canConvertString(s string, t string, k int) bool {
         diffs[diff]++
     }
 
-    fmt.Println(diffs)
     for key, val := range diffs {
         if key == 0 || val == 0 {
             continue

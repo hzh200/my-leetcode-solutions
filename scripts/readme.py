@@ -127,8 +127,10 @@ def generate_readme_file(): # Generate readme file.
 def main(): # Generate README.md and corresponding domain markdown files automatically.
     # os.rmdir(DOMAINS_PATH)
     # os.removedirs(DOMAINS_PATH)
-    shutil.rmtree(DOMAINS_PATH)
-    os.remove(README_PATH)
+    if os.path.exists(DOMAINS_PATH):
+        shutil.rmtree(DOMAINS_PATH)
+    if os.path.exists(README_PATH):
+        os.remove(README_PATH)
     generate_readme_file()
 
 if __name__ == "__main__":

@@ -5,6 +5,10 @@ class Type(Enum):
     Data_Structure = 'Data Structure'
     Implementation = 'Implementation'
 
+class ImplsDomain(Enum):
+    Function = 'Function'
+    Data_Structure = 'Data Structure'
+
 class AlgorithmsDomain(Enum):
     String = 'String'
     DynamicProgramming = 'DP'
@@ -22,8 +26,15 @@ class AlgorithmsDomain(Enum):
     Math = 'Math'
     KMP = 'KMP'
     Stack = 'Stack'
-    Bucket = 'bucket'
+    Bucket = 'Bucket'
     SlidingWindow = 'SlidingWindow'
+    Simulating = 'Simulate'
+    SortedSet = 'SortedSet'
+
+class DataStructuresDomain(Enum):
+    Array = 'Array'
+    LinkedList = 'Linked List'
+    Tree = 'Tree'
 
 class IndieDomain:
     name: str
@@ -33,37 +44,29 @@ class IndieDomain:
         self.name = domain
         self.value = domain
 
-class DataStructuresDomain(Enum):
-    Array = 'Array'
-    LinkedList = 'Linked List'
+domain_mapping = {}
 
-class ImplsDomain(Enum):
-    Function = 'Function'
-    Data_Structure = 'Data Structure'
+for item in AlgorithmsDomain.__members__.items():
+    domain_name = ""
+    for c in list(item[1].value):
+        if c >= 'A' and c <= 'Z':
+            if len(domain_name) != 0:
+                domain_name += '_'
+            domain_name += c.upper()
+        else:
+            domain_name += c
+    domain_mapping[domain_name] = item[1]
 
-domain_mapping = {
-    'dp': AlgorithmsDomain.DynamicProgramming,
-    'dfs': AlgorithmsDomain.DFS,
-    'bfs': AlgorithmsDomain.BFS,
-    'a-star': AlgorithmsDomain.ASTAR,
-    'binary-search': AlgorithmsDomain.BinarySearch,
-    'greedy': AlgorithmsDomain.Greedy,
-    'backtracking': AlgorithmsDomain.BackTracking,
-    'bit': AlgorithmsDomain.Bit,
-    'iterate': AlgorithmsDomain.Iterate,
-    'two-pointers': AlgorithmsDomain.TwoPointers,
-    'hash-table': AlgorithmsDomain.HashTable,
-    'heap': AlgorithmsDomain.Heap,
-    'math': AlgorithmsDomain.Math,
-    'kmp': AlgorithmsDomain.KMP,
-    'stack': AlgorithmsDomain.Stack,
-    'bucket': AlgorithmsDomain.Bucket,
-    'sliding-window': AlgorithmsDomain.SlidingWindow,
-
-    'array': DataStructuresDomain.Array,
-    'string': AlgorithmsDomain.String,
-    'linked-list': DataStructuresDomain.LinkedList,
-}
+for item in DataStructuresDomain.__members__.items():
+    domain_name = ""
+    for c in list(item[1].value):
+        if c >= 'A' and c <= 'Z':
+            if len(domain_name) != 0:
+                domain_name += '_'
+            domain_name += c.upper()
+        else:
+            domain_name += c
+    domain_mapping[domain_name] = item[1]
 
 class Difficulty(Enum):
     Easy = 'Easy'
