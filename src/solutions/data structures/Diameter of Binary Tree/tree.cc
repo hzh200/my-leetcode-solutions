@@ -10,23 +10,21 @@
  * };
  */
 class Solution {
+    int res = 0;
 public:
     int diameterOfBinaryTree(TreeNode* root) {
-        diameterOfBinaryTreeCore(root);
-        return max_len;
+        if (root == nullptr) {
+            return 0;
+        }
+        res = max(res, diameterOfBinaryTreeCore(root->left) + diameterOfBinaryTreeCore(root->right));
+        return res;
     }
-
     int diameterOfBinaryTreeCore(TreeNode* root) {
-        int left = 0, right = 0;
-        if (root->left != nullptr) {
-            left = diameterOfBinaryTreeCore(root->left);
+        if (root == nullptr) {
+            return 0;
         }
-        if (root->right != nullptr) {
-            right = diameterOfBinaryTreeCore(root->right);
-        }
-        max_len = max(max_len, left + right);
-        return max(left, right) + 1;
+        int left = diameterOfBinaryTreeCore(root->left), right = diameterOfBinaryTreeCore(root->right);
+        res = max(res, left + right);
+        return 1 + max(left, right);
     }
-private:
-    int max_len = 0;
 };

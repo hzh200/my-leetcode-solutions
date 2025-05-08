@@ -30,6 +30,7 @@ class AlgorithmsDomain(Enum):
     SlidingWindow = 'SlidingWindow'
     Simulating = 'Simulate'
     SortedSet = 'SortedSet'
+    Set = 'Set'
 
 class DataStructuresDomain(Enum):
     Array = 'Array'
